@@ -1110,8 +1110,8 @@
                                 <div class="dropdown-footer">
                                     <ul class="profile-nav">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class='bx bx-log-out'></i> <span>Salir</span>
+                                            <a href="../html/logout.php" class="nav-link">
+                                                <i class='bx bx-log-out'></i> <span>Cerrar Sesión</span>
                                             </a>
                                         </li>
                                     </ul>
