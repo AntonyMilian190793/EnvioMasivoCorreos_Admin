@@ -19,7 +19,7 @@ class Usuario extends Conectar {
                 $sql->bindValue(1, $correo);
                 $sql->bindValue(2, $password);
                 $sql->execute();
-                $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
+                $resultado=$sql->fetch();
 
                 if(is_array($resultado) == true AND count($resultado)>0){
                     $_SESSION["usu_id"] = $resultado["usu_id"];

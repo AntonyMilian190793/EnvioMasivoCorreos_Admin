@@ -1,3 +1,11 @@
+<?php
+
+    require_once("../../config/conexion.php");
+
+    if(isset($_SESSION["usu_id"])){
+
+?>
+
 <!doctype html>
 <html lang="es">
     <head>
@@ -31,8 +39,6 @@
                     <li class="item"><a href="dashboard-analytics.html"><i class='bx bx-home-alt'></i></a></li>
 
                     <li class="item">Dashboard</li>
-
-                    <li class="item">Blank Page</li>
                 </ol>
             </div>
             <!-- End Breadcrumb Area -->
@@ -51,3 +57,11 @@
     
     </body>
 </html>
+
+<?php
+
+    }else{
+        header("location:" .Conectar::ruta(). "../../index.php");
+    }
+
+?>

@@ -27,27 +27,41 @@
 
 
                     <li class="nav-item-title">
-                        Apps
+                        Menú
                     </li>
 
                     <li class="nav-item">
                         <a href="app-chat.html" class="nav-link">
                             <span class="icon"><i class='bx bx-message'></i></span>
-                            <span class="menu-title">Chat</span>
+                            <span class="menu-title">Inicio</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="app-todo.html" class="nav-link">
                             <span class="icon"><i class='bx bx-badge-check'></i></span>
-                            <span class="menu-title">Todo</span>
+                            <span class="menu-title">Mant. Usuario</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a href="app-calendar.html" class="nav-link">
                             <span class="icon"><i class='bx bx-calendar'></i></span>
-                            <span class="menu-title">Calendar</span>
+                            <span class="menu-title">Mant. Producto</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="app-calendar.html" class="nav-link">
+                            <span class="icon"><i class='bx bx-calendar'></i></span>
+                            <span class="menu-title">Enviar Correos</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../html/logout.php" class="nav-link">
+                            <span class="icon"><i class='bx bx-log-out'></i></span>
+                            <span class="menu-title">Cerrar Sesión</span>
                         </a>
                     </li>
 
