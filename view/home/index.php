@@ -1111,7 +1111,7 @@
                                     <ul class="profile-nav">
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">
-                                                <i class='bx bx-log-out'></i> <span>Logout</span>
+                                                <i class='bx bx-log-out'></i> <span>Salir</span>
                                             </a>
                                         </li>
                                     </ul>
