@@ -18,7 +18,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-item dropdown language-switch-nav-item">
+                        <!-- <li class="nav-item dropdown language-switch-nav-item">
                             <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="..\..\public\img\spain-flag.jpg" alt="image">
                                 <span>Español <i class='bx bx-chevron-down'></i></span>
@@ -55,7 +55,7 @@
                                     <img src="..\..\public\img\italy-flag.jpg" alt="flag">
                                 </a>
                             </div>
-                        </li>
+                        </li> -->
 
                         <li class="nav-item dropdown profile-nav-item">
                             <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
