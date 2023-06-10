@@ -36,7 +36,7 @@
                 <h1>Dashboard</h1>
 
                 <ol class="breadcrumb">
-                    <li class="item"><a href="dashboard-analytics.html"><i class='bx bx-home-alt'></i></a></li>
+                <li class="item"><a href="../home/"><i class='bx bx-home-alt'></i></a></li>
 
                     <li class="item">Dashboard</li>
                 </ol>
@@ -54,6 +54,7 @@
         <?php
         require_once("../html/MainJs.php");
     ?>
+    <script tyoe="text/javascript" src="home.js"></script>
     
     </body>
 </html>
