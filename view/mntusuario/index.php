@@ -56,16 +56,14 @@
     <thead>
         <tr>
             <th>Correo Electrónico</th>
+            <th>Estado</th>
             <th></th>
         </tr>
     </thead>
-    <tbody>
-
-        
-        
+    <tbody> 
     </tbody>
 </table>
-                </div>
+
             </div>
             </div>
             <!-- End Breadcrumb Area -->

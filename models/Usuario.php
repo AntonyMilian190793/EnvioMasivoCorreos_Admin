@@ -40,7 +40,7 @@ class Usuario extends Conectar {
     public function get_usuario(){
         $conectar = parent::conexion();
         parent::set_names();
-        $sql ="SELECT * FROM tm_usuario WHERE rol_id=1 AND est=1";
+        $sql ="SELECT * FROM tm_usuario WHERE rol_id=1";
         $sql=$conectar->prepare($sql);
         $sql->execute();
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
