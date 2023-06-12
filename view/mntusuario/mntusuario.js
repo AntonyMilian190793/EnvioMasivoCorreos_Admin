@@ -57,5 +57,24 @@ $(document).ready(function(){
 });
 
 function eliminar(usu_id){
+
+    Swal.fire({
+        title: 'Eliminar?',
+        text: "Está seguro de eliminar el registro",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No',
+        confirmButtonText: 'Si'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Eliminado!',
+            'Eliminado correctamente!',
+            'success'
+          )
+        }
+      })
     console.log(usu_id);
 }

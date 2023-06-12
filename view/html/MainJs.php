@@ -35,5 +35,5 @@
         <script src="..\..\public\js\jvectormap-world-mill-en.js"></script>
         <!-- Custom JS -->
         <script src="..\..\public\js\custom.js"></script>
-
         <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
