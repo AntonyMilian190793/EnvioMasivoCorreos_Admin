@@ -24,6 +24,11 @@ switch($_GET["op"]){
         
         echo json_encode($results);
     break;
+
+    case "eliminar" :
+
+        $usuario->delete_usuario($_POST["usu_id"]);
+        break;
 }
 
 

@@ -69,6 +69,10 @@ function eliminar(usu_id){
         confirmButtonText: 'Si'
       }).then((result) => {
         if (result.isConfirmed) {
+            $.post("../../controller/usuario.php?op=eliminar", {usu_id:usu_id}, function(data){
+                $('#ususario_data').DataTable().ajax.reload();
+            });
+            
           Swal.fire(
             'Eliminado!',
             'Eliminado correctamente!',
@@ -76,5 +80,4 @@ function eliminar(usu_id){
           )
         }
       })
-    console.log(usu_id);
 }
