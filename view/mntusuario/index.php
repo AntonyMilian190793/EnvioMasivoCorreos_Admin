@@ -45,29 +45,24 @@
 
                 <div class="card mb-30">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h3>Basic Grid</h3>
+                    <h3>Listado de Usuarios</h3>
 
                 </div>
 
 
 
                 <div class="card-body">
-                <table id="myTable" class="display">
+                <table id="usuario_data" class="table display responsive nowrap">
     <thead>
         <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
+            <th>Correo Electrónico</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Row 1 Data 1</td>
-            <td>Row 1 Data 2</td>
-        </tr>
-        <tr>
-            <td>Row 2 Data 1</td>
-            <td>Row 2 Data 2</td>
-        </tr>
+
+        
+        
     </tbody>
 </table>
                 </div>
