@@ -58,6 +58,7 @@ switch($_GET["op"]){
                 $output["prod_img"] = $row["prod_img"];
                 $output["prod_descrip"] = $row["prod_descrip"];
             }
+            echo json_encode($output);
         }
         break;  
 }

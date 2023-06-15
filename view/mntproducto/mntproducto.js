@@ -100,7 +100,19 @@ function eliminar(prod_id){
 }
 
 function editar(prod_id){
-    console.log(prod_id);
+    $('#lbltitulo').html("Editar Registro");
+    $.post("../../controller/producto.php?op=mostrar",{prod_id:prod_id},function(data){
+        var datos = JSON.parse(data);
+        $('#prod_id').val(datos.prod_id);
+        $('#prod_nom').val(datos.prod_nom);
+        $('#prod_precion').val(datos.prod_precion);
+        $('#prod_preciod').val(datos.prod_preciod);
+        $('#prod_img').val(datos.prod_img);
+        $('#prod_cupon').val(datos.prod_cupon);
+        $('#prod_url').val(datos.prod_url);
+        $('#prod_descrip').val(datos.prod_descrip);
+        $('#mntmantenimiento').modal('show');
+    });
 }
 
 function nuevo(){
