@@ -36,7 +36,7 @@ class Producto extends Conectar {
     public function insert_producto($prod_nom, $prod_precion, $prod_preciod, $prod_url, $prod_img, $prod_cupom, $prod_descrip){
         $conectar = parent::conexion();
         parent::set_names();
-        $sql ="INSERT INTO tm_producto (prod_id, prod_nom, prod_precion, prod_preciod, prod_url, prod_img, prod_cupon, prod_descrip, fech_crea, fech_modi, fech_elim, est) VALUES (NULL,?,?,?,?,?,?,? now(),  NULL, NULL,1)";
+        $sql ="INSERT INTO tm_producto (prod_id, prod_nom, prod_precion, prod_preciod, prod_url, prod_img, prod_cupon, prod_descrip, fech_crea, fech_modi, fech_elim, est) VALUES (NULL,?,?,?,?,?,?,?, now(),  NULL, NULL,1)";
         $sql=$conectar->prepare($sql);
         $sql->bindValue(1, $prod_nom);
         $sql->bindValue(2, $prod_precion);

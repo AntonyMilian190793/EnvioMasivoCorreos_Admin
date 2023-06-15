@@ -1,3 +1,30 @@
+function init(){
+    $("#producto_form").on("submit",function(e){
+        guardaryeditar(e);
+    });
+}
+
+function guardaryeditar(e){
+    e.preventDefault();
+    var formData = new FormData($("#producto_form")[0]);
+    $.ajax({
+        url: "../../controller/producto.php?op=guardaryeditar",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(data){
+            $('#producto_data').DataTable().ajax.reload();
+            $('#mntmantenimiento').modal('hide');
+            Swal.fire({
+                title: 'Correcto!',
+                text: 'Se regsitró corectamente!',
+                icon:'success',
+                confirmButtonText: 'Aceptar'
+            })
+        }
+    });
+}
 
 $(document).ready(function(){
 
@@ -77,5 +104,11 @@ function editar(prod_id){
 }
 
 function nuevo(){
+    $('#lbltitulo').html("Nuevo Registro");
+    $('prod_id').val('');
+    $('#producto_form')[0].reset();
     $('#mntmantenimiento').modal('show');
 }
+
+
+init();

@@ -9,11 +9,12 @@ switch($_GET["op"]){
 
     case "guardaryeditar":
         if(empty($_POST["prod_id"])){
-            $producto->insert_producto($_POST["prod_nom"], $_POST["prod_precion"], $_POST["prod_preciod"], $_POST["prod_url"], $_POST["prod_img"],$_POST["prod_cupon"],$_POST["prod_descrip"]);
+            $producto->insert_producto($_POST["prod_nom"],$_POST["prod_precion"],$_POST["prod_preciod"],$_POST["prod_url"],$_POST["prod_img"],$_POST["prod_cupon"],$_POST["prod_descrip"]);
         }else{
-            $producto->update_producto($_POST["prod_id"] ,$_POST["prod_nom"], $_POST["prod_precion"], $_POST["prod_preciod"], $_POST["prod_url"], $_POST["prod_img"],$_POST["prod_cupon"],$_POST["prod_descrip"]);
+            $producto->update_producto($_POST["prod_id"],$_POST["prod_nom"],$_POST["prod_precion"],$_POST["prod_preciod"],$_POST["prod_url"],$_POST["prod_img"],$_POST["prod_cupon"],$_POST["prod_descrip"]);
         }
         break;
+
     case "listar":
         $datos =$producto->get_producto();
         $data = array();
