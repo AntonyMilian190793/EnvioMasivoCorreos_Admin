@@ -75,3 +75,7 @@ function eliminar(prod_id){
 function editar(prod_id){
     console.log(prod_id);
 }
+
+function nuevo(){
+    $('#mntmantenimiento').modal('show');
+}

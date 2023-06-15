@@ -34,20 +34,20 @@
             <!-- Breadcrumb Area -->
             <div class="breadcrumb-area">
                 <h1>Mnt. Producto</h1>
+              
 
                 <ol class="breadcrumb">
                     <li class="item"><a href="../home/"><i class='bx bx-home-alt'></i></a></li>
 
                     <li class="item">Mantenimiento de Producto</li>
+                    <br>
                 </ol>
+                <button onclick="nuevo()" class="btn btn-primary btn-md" style="float: right;">Nuevo</button>
             </div>
 
             <div class="card mb-30">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h3>Listado de Productos</h3>
-                    <br>
-                    <button type="button" class="btn btn-primary btn-md">Nuevo</button>
-
                 </div>
 
 
@@ -73,6 +73,10 @@
             <!-- End Breadcrumb Area -->
 
             <div class="flex-grow-1"></div>
+            <?php
+
+                require_once("mntmantenimiento.php") 
+            ?>
 
             <?php
         require_once("../html/MainFooter.php");
