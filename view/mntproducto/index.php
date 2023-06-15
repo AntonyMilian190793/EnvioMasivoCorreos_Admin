@@ -41,6 +41,35 @@
                     <li class="item">Mantenimiento de Producto</li>
                 </ol>
             </div>
+
+            <div class="card mb-30">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h3>Listado de Productos</h3>
+                    <br>
+                    <button type="button" class="btn btn-primary btn-md">Nuevo</button>
+
+                </div>
+
+
+
+                <div class="card-body">
+                <table id="producto_data" class="table display responsive nowrap">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Desc</th>
+            <th>Cupon</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody> 
+    </tbody>
+</table>
+
+            </div>
+            </div>
             <!-- End Breadcrumb Area -->
 
             <div class="flex-grow-1"></div>
