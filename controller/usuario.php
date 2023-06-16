@@ -11,7 +11,7 @@ switch($_GET["op"]){
         if(empty($_POST["usu_id"])){
             $usuario->insert_usuario($_POST["usu_nom"], $_POST["usu_apep"], $_POST["usu_apem"], $_POST["usu_correo"]);
         }else{
-            $usuario->update_usuario($_POST["usu_id"],$_POST["usu_nom"],$_POST["usu_apep"],$_POST["usu_apem"],$_POST["usu_correo"],$_POST["fech_crea"],$_POST["rol_id"],$_POST["usu_pass"] ,$_POST["fech_modi"]  ,$_POST["fech_elim"],$_POST["est"]);
+            $usuario->update_usuario($_POST["usu_id"],$_POST["usu_nom"], $_POST["usu_apep"], $_POST["usu_apem"], $_POST["usu_correo"]);
         }
         break;
 
@@ -54,6 +54,20 @@ switch($_GET["op"]){
 
         $usuario->delete_usuario($_POST["usu_id"]);
         break;
+
+        case "mostrar" :
+            $datos=$usuario->get_usuario_x_id($_POST["usu_id"]);
+    
+            if(is_array($datos) == true AND count($datos)<>0){
+                foreach($datos as $row){
+                    $output["usu_id"] = $row["usu_id"];
+                    $output["usu_nom"] = $row["usu_nom"];
+                    $output["usu_apep"] = $row["usu_apep"] ."  ". $row["usu_apem"];
+                    $output["usu_correo"] = $row["usu_correo"];
+                }
+                echo json_encode($output);
+            }
+            break;  
 }
 
 

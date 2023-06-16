@@ -99,6 +99,19 @@ function eliminar(usu_id){
       })
 }
 
+function editar(usu_id){
+    $('#lbltitulo').html("Editar Registro");
+    $.post("../../controller/usuario.php?op=mostrar",{usu_id:usu_id},function(data){
+        var datos = JSON.parse(data);
+        $('#usu_id').val(datos.usu_id);
+        $('#usu_nom').val(datos.usu_nom);
+        $('#usu_apep').val(datos.usu_apep);
+        $('#usu_apem').val(datos.usu_apem);
+        $('#usu_correo').val(datos.usu_correo);
+        $('#mntmantenimiento').modal('show');
+    });
+}
+
 function nuevo(){
     $('#lbltitulo').html("Nuevo Registro");
     $('usu_id').val('');
