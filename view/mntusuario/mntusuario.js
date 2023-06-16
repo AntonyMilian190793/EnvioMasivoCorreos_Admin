@@ -1,3 +1,30 @@
+function init(){
+    $("#usuario_form").on("submit",function(e){
+        guardaryeditar(e);
+    });
+}
+
+function guardaryeditar(e){
+    e.preventDefault();
+    var formData = new FormData($("#usuario_form")[0]);
+    $.ajax({
+        url: "../../controller/usuario.php?op=guardaryeditar",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(data){
+            $('#usuario_data').DataTable().ajax.reload();
+            $('#mntmantenimiento').modal('hide');
+            Swal.fire({
+                title: 'Correcto!',
+                text: 'Se regsitró corectamente!',
+                icon:'success',
+                confirmButtonText: 'Aceptar'
+            })
+        }
+    });
+}
 
 $(document).ready(function(){
 
@@ -71,3 +98,12 @@ function eliminar(usu_id){
         }
       })
 }
+
+function nuevo(){
+    $('#lbltitulo').html("Nuevo Registro");
+    $('usu_id').val('');
+    $('#usuario_form')[0].reset();
+    $('#mntmantenimiento').modal('show');
+}
+
+init();

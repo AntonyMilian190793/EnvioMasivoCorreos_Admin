@@ -39,7 +39,9 @@
                     <li class="item"><a href="../home/"><i class='bx bx-home-alt'></i></a></li>
 
                     <li class="item">Mantenimiento de Usuarios</li>
+                    <br>
                 </ol>
+                <button onclick="nuevo()" class="btn btn-primary btn-md">Nuevo</button>
             </div>
 
 
@@ -55,8 +57,11 @@
                 <table id="usuario_data" class="table display responsive nowrap">
     <thead>
         <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
             <th>Correo Electrónico</th>
             <th>Estado</th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -73,6 +78,10 @@
             <?php
         require_once("../html/MainFooter.php");
     ?>
+                <?php
+
+require_once("mntmantenimiento.php") 
+?>
 
         </div>
         <!-- End Main Content Wrapper Area -->

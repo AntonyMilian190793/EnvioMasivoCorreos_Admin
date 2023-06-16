@@ -55,6 +55,35 @@ class Usuario extends Conectar {
         $sql->execute();
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function insert_usuario($usu_nom, $usu_apep, $usu_apem,$usu_correo){
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql ="INSERT INTO tm_usuario (usu_nom, usu_apep, usu_apem ,usu_correo, rol_id, fech_crea, est) VALUES (?,?,?,?, 1, now(), 1)";
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $usu_nom);
+        $sql->bindValue(2, $usu_apep);
+        $sql->bindValue(3, $usu_apem);
+        $sql->bindValue(4, $usu_correo);
+        $sql->execute();
+    }
+
+    public function update_usuario($prod_id,$prod_nom,$prod_precion,$prod_preciod,$prod_url,$prod_img,$prod_cupon,$prod_descrip){
+        $conectar=parent::conexion();
+        parent::set_names();
+        $sql="UPDATE tm_usuario SET prod_nom=?, prod_precion=?, prod_preciod=?, prod_url=?, prod_img=?, prod_cupon=?, prod_descrip=?, fech_modi=now() WHERE prod_id=?";
+        $sql=$conectar->prepare($sql);
+        $sql->bindValue(1,$prod_nom);
+        $sql->bindValue(2,$prod_precion);
+        $sql->bindValue(3,$prod_preciod);
+        $sql->bindValue(4,$prod_url);
+        $sql->bindValue(5,$prod_img);
+        $sql->bindValue(6,$prod_cupon);
+        $sql->bindValue(7,$prod_descrip);
+        $sql->bindValue(8,$prod_id);
+        $sql->execute();
+        return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 
 ?>
