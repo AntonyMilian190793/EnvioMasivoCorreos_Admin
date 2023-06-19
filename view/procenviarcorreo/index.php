@@ -39,7 +39,18 @@
                     <li class="item"><a href="../home/"><i class='bx bx-home-alt'></i></a></li>
 
                     <li class="item">Enviar Correos</li>
+                    <br>
                 </ol>
+
+                
+            </div>
+
+            <div class="card mb-30">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h3>Enviar Correos</h3>
+                    <br>
+                    <button onclick="enviarCorreo()" class="btn btn-primary btn-md" id="btnenviar">Enviar Correo</button>
+                </div>
             </div>
             <!-- End Breadcrumb Area -->
 
