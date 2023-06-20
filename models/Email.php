@@ -6,6 +6,8 @@
     require_once("../config/conexion.php");
     require_once("../models/Producto.php");
 
+    require_once("../models/Usuario.php");
+
     class Email extends PHPMailer{
 
         protected $gCorreo = 'antonymilian19@outlook.com'; //variable que contiene el correo destinatario antonymilian19@outlook.com
@@ -61,17 +63,28 @@
                 ;
             }
 
+            $usuario = new Usuario();
+            $datos2 = $usuario->get_usuario();
+
             $this-> isSMTP();
             $this->Host = 'smtp.office365.com';
             $this->Port = 587;
             $this -> SMTPAuth = true;
+
             $this->Username = $this->gCorreo;
             $this->Password = $this->gContrasena;
             $this->From = $this->gCorreo;
             $this->FromName = "Fe y Alegría del Perú";
             $this->CharSet = 'UTF8';
-            $this->addAddress("antonymilian19@outlook.com");
-            $this->WordWrap = 50;
+
+            foreach($datos2 as $row2){
+              //$this->addAddress($row2["usu_correo"]);
+              $this->addBCC($row2["usu_correo"]);
+            }
+
+            // $this->addAddress("antonymilian19@outlook.com");
+            // $this->WordWrap = 50;
+
             $this->IsHTML(true);
             $this->Subject = "Fe y Alegría del Perú";
             $cuerpo = file_get_contents('../public/Template_FyA.html');
