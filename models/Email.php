@@ -1,11 +1,12 @@
 <?php
 
-    require('class.phpmailer.php');
-    include('class.smtp.php');
+  require '../include/vendor/autoload.php';
+
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\Exception;
 
     require_once("../config/conexion.php");
     require_once("../models/Producto.php");
-
     require_once("../models/Usuario.php");
 
     class Email extends PHPMailer{
@@ -91,7 +92,14 @@
             $cuerpo = str_replace('$tbldetalle', $tbody, $cuerpo);
             $this->Body = $cuerpo;
             $this->AltBody = strip_tags("Descuento");
-            return $this->Send();
+
+            try{
+              $this->Send();
+              return true;
+            }catch(Exception $e){
+              return $e;
+            }
+
         } 
 
     }

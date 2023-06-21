@@ -7,7 +7,8 @@
     switch ($_GET["op"]){
         
         case "enviarCorreo":
-            $email->enviar_correo();
+            $datos=$email->enviar_correo();
+            echo json_encode($datos);    
             break;
 
     }
