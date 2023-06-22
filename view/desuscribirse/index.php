@@ -2,12 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta name="x-apple-disable-message-reformatting">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="telephone=no" name="format-detection">
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Vendors Min CSS -->
+    <link rel="stylesheet" href="..\..\public\css\vendors.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="..\..\public\css\style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="..\..\public\css\responsive.css">
+    <script src="..\..\public\js\vendors.min.js"></script>
     <link rel="stylesheet" href="styles.css">
+    
+
     <title></title>
     <!--[if (mso 16)]>
     <style type="text/css">
@@ -424,7 +430,16 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+    </div>    <!-- jvectormap Min JS -->
+    <script src="..\..\public\js\jvectormap-1.2.2.min.js"></script>
+    <!-- jvectormap World Mil JS -->
+    <script src="..\..\public\js\jvectormap-world-mill-en.js"></script>
+    <!-- Custom JS -->
+    <script src="..\..\public\js\custom.js"></script>
+
+    <script type="text/javascript" src="desuscribirse.js"></script>
+
 </body>
 
 </html>
+

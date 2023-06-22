@@ -67,7 +67,12 @@ switch($_GET["op"]){
                 }
                 echo json_encode($output);
             }
-            break;  
+            break;
+            
+        case "eliminar_x_correo" :
+
+            $usuario->delete_usuario_x_correo($_POST["usu_correo"]);
+            break;    
 }
 
 

@@ -53,7 +53,6 @@ class Usuario extends Conectar {
         $sql=$conectar->prepare($sql);
         $sql->bindValue(1, $usu_id);
         $sql->execute();
-        return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function get_usuario_x_id($usu_id){
@@ -90,6 +89,15 @@ class Usuario extends Conectar {
         $sql->bindValue(5,$usu_id);
         $sql->execute();
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function delete_usuario_x_correo($usu_correo){
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql ="UPDATE tm_usuario SET est=0 WHERE usu_correo=?";
+        $sql=$conectar->prepare($sql);
+        $sql->bindValue(1, $usu_correo);
+        $sql->execute();
     }
 }
 

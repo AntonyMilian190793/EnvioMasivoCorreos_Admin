@@ -80,28 +80,25 @@
 
             foreach($datos2 as $row2){
               //$this->addAddress($row2["usu_correo"]);
-              $this->addBCC($row2["usu_correo"]);
+              $this->addAddress($row2["usu_correo"]);
               $this->WordWrap = 50;
               $this->IsHTML(true);
               $this->Subject = "Fe y Alegría del Perú";
               $cuerpo = file_get_contents('../public/Template_FyA.html');
               $cuerpo = str_replace('$tbldetalle', $tbody, $cuerpo);
-              $cuerpo = str_replace('$xemaildesuscribirse', 'http://localhost/EnvioMasivoCorreos_Admin/view/desuscribirse/', $cuerpo);
+              $cuerpo = str_replace('$xemaildesuscribirse', 'http://localhost/EnvioMasivoCorreos_Admin/view/desuscribirse/?email='.$row2["usu_correo"], $cuerpo);
               $this->Body = $cuerpo;
               $this->AltBody = strip_tags("Descuento");
+
+              try{
+                $this->Send();
+                return $row2["usu_correo"];
+              }catch(Exception $e){
+                return $e;
+              }
             }
 
             // $this->addAddress("antonymilian19@outlook.com");
-
-
-
-            try{
-              $this->Send();
-              return true;
-            }catch(Exception $e){
-              return $e;
-            }
-
         } 
 
     }
