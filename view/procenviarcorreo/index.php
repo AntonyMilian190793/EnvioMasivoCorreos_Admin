@@ -9,7 +9,8 @@
 <!doctype html>
 <html lang="es">
     <head>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <?php
         require_once("../html/MainHead.php");
@@ -51,6 +52,19 @@
                     <br>
                     <button onclick="enviarCorreo()" class="btn btn-primary btn-md" id="btnenviar">Enviar Correo</button>
                 </div>
+                <script>
+                    function enviarCorreo() {
+
+
+
+swal({
+    title: "HelpDesk!",
+    text: "Registro Eliminado..",
+    type: "success",
+    confirmButtonClass: "btn-success"
+});
+}
+                </script>
             </div>
             <!-- End Breadcrumb Area -->
 
@@ -66,6 +80,8 @@
         require_once("../html/MainJs.php");
     ?>
     <script tyoe="text/javascript" src="procenviarcorreo.js"></script>
+
+
     
     </body>
 </html>

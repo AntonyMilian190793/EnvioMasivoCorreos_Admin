@@ -41,6 +41,11 @@
                     <li class="item">Dashboard</li>
                 </ol>
             </div>
+
+            <div>
+                <canvas id="myChart"></canvas>
+            </div>
+            <br>
             <!-- End Breadcrumb Area -->
 
             <div class="flex-grow-1"></div>
@@ -54,7 +59,12 @@
         <?php
         require_once("../html/MainJs.php");
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
     <script tyoe="text/javascript" src="home.js"></script>
+    <script tyoe="text/javascript" src="chart.js"></script>
     
     </body>
 </html>
