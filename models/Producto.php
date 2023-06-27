@@ -33,39 +33,35 @@ class Producto extends Conectar {
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function insert_producto($prod_nom, $prod_oficial, $prod_soles, $prod_usd, $prod_plazo,$fech_inicio, $fech_fin, $prod_monto, $prod_ie){
+    public function insert_producto($prod_nom, $prod_precion, $prod_preciod, $prod_url, $prod_img, $prod_cupom, $prod_descrip){
         $conectar = parent::conexion();
         parent::set_names();
-        $sql ="INSERT INTO tm_producto (prod_id, prod_nom, prod_oficial, prod_soles, prod_usd, prod_plazo, fech_inicio, fech_fin, fech_elim, prod_monto, prod_ie, est) VALUES (NULL,?,?,?,?,?,?,?,NULL,?,?,1)";
+        $sql ="INSERT INTO tm_producto (prod_id, prod_nom, prod_precion, prod_preciod, prod_url, prod_img, prod_cupon, prod_descrip, fech_crea, fech_modi, fech_elim, est) VALUES (NULL,?,?,?,?,?,?,?, now(),  NULL, NULL,1)";
         $sql=$conectar->prepare($sql);
         $sql->bindValue(1, $prod_nom);
-        $sql->bindValue(2, $prod_oficial);
-        $sql->bindValue(3, $prod_soles);
-        $sql->bindValue(4, $prod_usd);
-        $sql->bindValue(5, $prod_plazo);
-        $sql->bindValue(6, $fech_inicio);
-        $sql->bindValue(7, $fech_fin);
-        $sql->bindValue(8, $prod_monto);
-        $sql->bindValue(9, $prod_ie);
+        $sql->bindValue(2, $prod_precion);
+        $sql->bindValue(3, $prod_preciod);
+        $sql->bindValue(4, $prod_url);
+        $sql->bindValue(5, $prod_img);
+        $sql->bindValue(6, $prod_cupom);
+        $sql->bindValue(7, $prod_descrip);
         $sql->execute();
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function update_producto($prod_id, $prod_nom, $prod_oficial, $prod_soles, $prod_usd, $prod_plazo,$fech_inicio, $fech_fin, $prod_monto, $prod_ie){
+    public function update_producto($prod_id,$prod_nom,$prod_precion,$prod_preciod,$prod_url,$prod_img,$prod_cupon,$prod_descrip){
         $conectar=parent::conexion();
         parent::set_names();
-        $sql="UPDATE tm_producto SET prod_nom=?, prod_oficial=?, prod_soles=?, prod_usd=?, prod_plazo=?, fech_inicio=?, fech_fin=? , prod_monto=?, prod_ie=? WHERE prod_id=?";
+        $sql="UPDATE tm_producto SET prod_nom=?, prod_precion=?, prod_preciod=?, prod_url=?, prod_img=?, prod_cupon=?, prod_descrip=?, fech_modi=now() WHERE prod_id=?";
         $sql=$conectar->prepare($sql);
-        $sql->bindValue(1, $prod_nom);
-        $sql->bindValue(2, $prod_oficial);
-        $sql->bindValue(3, $prod_soles);
-        $sql->bindValue(4, $prod_usd);
-        $sql->bindValue(5, $prod_plazo);
-        $sql->bindValue(6, $fech_inicio);
-        $sql->bindValue(7, $fech_fin);
-        $sql->bindValue(8, $prod_monto);
-        $sql->bindValue(9, $prod_ie);
-        $sql->bindValue(10,$prod_id);
+        $sql->bindValue(1,$prod_nom);
+        $sql->bindValue(2,$prod_precion);
+        $sql->bindValue(3,$prod_preciod);
+        $sql->bindValue(4,$prod_url);
+        $sql->bindValue(5,$prod_img);
+        $sql->bindValue(6,$prod_cupon);
+        $sql->bindValue(7,$prod_descrip);
+        $sql->bindValue(8,$prod_id);
         $sql->execute();
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
     }

@@ -8,7 +8,7 @@
 
         protected function conexion(){
             try{
-                $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=administracion", "root", "");
+                $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=masivo", "root", "");
                 return $conectar;
             }catch(Exception $e){
                 print "Error: " .$e->getMessage() . "<br>";
@@ -21,7 +21,7 @@
         }
 
         public static function ruta(){
-            return "http://localhost/Admininistracion/";
+            return "http://localhost/EnvioMasivoCorreos_Admin/";
         }
     }
 

@@ -25,6 +25,7 @@ class Usuario extends Conectar {
                     $_SESSION["usu_id"] = $resultado["usu_id"];
                     $_SESSION["usu_nom"] = $resultado["usu_nom"];
                     $_SESSION["usu_apep"] = $resultado["usu_apep"];
+                    $_SESSION["usu_apem"] = $resultado["usu_apem"];
                     $_SESSION["usu_correo"] = $resultado["usu_correo"];
                     header("Location: " . Conectar::ruta() . "view/home/");
                     exit();
@@ -64,27 +65,27 @@ class Usuario extends Conectar {
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function insert_usuario($usu_nom, $usu_apep, $fech_inicio, $fech_fin){
+    public function insert_usuario($usu_nom, $usu_apep, $usu_apem,$usu_correo){
         $conectar = parent::conexion();
         parent::set_names();
-        $sql ="INSERT INTO tm_usuario (usu_id, usu_nom, usu_apep, rol_id, fech_crea, fech_inicio, fech_fin, est) VALUES (NULL,?,?, 1, now(),?,?,1)";
+        $sql ="INSERT INTO tm_usuario (usu_id, usu_nom, usu_apep, usu_apem ,usu_correo, rol_id, fech_crea, est) VALUES (NULL,?,?,?,?, 1, now(), 1)";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $usu_nom);
         $sql->bindValue(2, $usu_apep);
-        $sql->bindValue(3, $fech_inicio);
-        $sql->bindValue(4, $fech_fin);
+        $sql->bindValue(3, $usu_apem);
+        $sql->bindValue(4, $usu_correo);
         $sql->execute();
     }
 
-    public function update_usuario($usu_id,$usu_nom, $usu_apep,$fech_inicio, $fech_fin){
+    public function update_usuario($usu_id,$usu_nom,$usu_apep, $usu_apem,$usu_correo){
         $conectar=parent::conexion();
         parent::set_names();
-        $sql="UPDATE tm_usuario SET usu_nom=?, usu_apep=?, fech_modi=now(),fech_inicio=?, fech_fin=? WHERE usu_id=?";
+        $sql="UPDATE tm_usuario SET usu_nom=?, usu_apep=?, usu_apem=?, usu_correo=?, fech_modi=now() WHERE usu_id=?";
         $sql=$conectar->prepare($sql);
-        $sql->bindValue(1, $usu_nom);
-        $sql->bindValue(2, $usu_apep);
-        $sql->bindValue(3, $fech_inicio);
-        $sql->bindValue(4, $fech_fin);
+        $sql->bindValue(1,$usu_nom);
+        $sql->bindValue(2,$usu_apep);
+        $sql->bindValue(3,$usu_apem);
+        $sql->bindValue(4,$usu_correo);
         $sql->bindValue(5,$usu_id);
         $sql->execute();
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
@@ -99,3 +100,5 @@ class Usuario extends Conectar {
         $sql->execute();
     }
 }
+
+?>

@@ -42,10 +42,23 @@
                     <li class="nav-item">
                         <a href="../mntproducto/" class="nav-link">
                             <span class="icon"><i class='bx bx-calendar'></i></span>
-                            <span class="menu-title">Mant. Financiadores</span>
+                            <span class="menu-title">Mant. Producto</span>
                         </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a href="../procenviarcorreo/" class="nav-link">
+                            <span class="icon"><i class='bx bx-calendar'></i></span>
+                            <span class="menu-title">Enviar Correos</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../html/logout.php" class="nav-link">
+                            <span class="icon"><i class='bx bx-log-out'></i></span>
+                            <span class="menu-title">Cerrar Sesión</span>
+                        </a>
+                    </li>
 
 
                 </ul>

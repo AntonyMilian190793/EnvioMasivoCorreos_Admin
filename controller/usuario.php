@@ -9,9 +9,9 @@ switch($_GET["op"]){
 
     case "guardaryeditar":
         if(empty($_POST["usu_id"])){
-            $usuario->insert_usuario($_POST["usu_nom"], $_POST["usu_apep"], $_POST["fech_inicio"], $_POST["fech_fin"]);
+            $usuario->insert_usuario($_POST["usu_nom"], $_POST["usu_apep"], $_POST["usu_apem"], $_POST["usu_correo"]);
         }else{
-            $usuario->update_usuario($_POST["usu_id"],$_POST["usu_nom"], $_POST["usu_apep"], $_POST["fech_inicio"], $_POST["fech_fin"]);
+            $usuario->update_usuario($_POST["usu_id"],$_POST["usu_nom"], $_POST["usu_apep"], $_POST["usu_apem"], $_POST["usu_correo"]);
         }
         break;
 
@@ -21,15 +21,14 @@ switch($_GET["op"]){
         foreach($datos as $row){
             $sub_array = array();
             $sub_array[] = $row["usu_nom"];
-            $sub_array[] = $row["usu_apep"];
+            $sub_array[] = $row["usu_apep"] ."  ". $row["usu_apem"] ;
+            $sub_array[] = $row["usu_correo"];
                 
             if( $row["est"] == 1){
-                $sub_array[] = '<span class="badge badge-pill badge-primary">Vigente</span>';
+                $sub_array[] = '<span class="badge badge-pill badge-primary">Suscrito</span>';
             }else{
-                $sub_array[] = '<span class="badge badge-pill badge-danger">No Vigente</span>';
+                $sub_array[] = '<span class="badge badge-pill badge-danger">No suscrito</span>';
             }
-            $sub_array[] = $row["fech_inicio"];
-            $sub_array[] = $row["fech_fin"];
 
             if( $row["est"] == 1){
                 $sub_array[] = '<button type="button" onClick="editar('.$row["usu_id"].')" id="'.$row["usu_id"].'" class="btn btn-outline-success"><i class="bx bx-edit"></i></button></button>';
@@ -63,9 +62,8 @@ switch($_GET["op"]){
                 foreach($datos as $row){
                     $output["usu_id"] = $row["usu_id"];
                     $output["usu_nom"] = $row["usu_nom"];
-                    $output["usu_apep"] = $row["usu_apep"];
-                    $output["fech_inicio"] = $row["fech_inicio"];
-                    $output["fech_fin"] = $row["fech_fin"];
+                    $output["usu_apep"] = $row["usu_apep"] ."  ". $row["usu_apem"];
+                    $output["usu_correo"] = $row["usu_correo"];
                 }
                 echo json_encode($output);
             }
@@ -76,3 +74,7 @@ switch($_GET["op"]){
             $usuario->delete_usuario_x_correo($_POST["usu_correo"]);
             break;    
 }
+
+
+
+?>

@@ -1,37 +1,36 @@
 <?php
 
-require_once("../../config/conexion.php");
+    require_once("../../config/conexion.php");
 
-if (isset($_SESSION["usu_id"])) {
+    if(isset($_SESSION["usu_id"])){
 
 ?>
 
-    <!doctype html>
-    <html lang="es">
-
+<!doctype html>
+<html lang="es">
     <head>
 
 
-        <?php
+    <?php
         require_once("../html/MainHead.php");
-        ?>
+    ?>
         <title>Fe y Alegría Del Perú - Correos Masivos</title>
 
         <link rel="icon" type="image/png" href="..\..\public\img\faviconfya.png">
     </head>
 
     <body>
-        <?php
+    <?php
         require_once("../html/MainMenu.php");
-        ?>
+    ?>
 
         <!-- Start Main Content Wrapper Area -->
         <div class="main-content d-flex flex-column">
 
-            <?php
-            require_once("../html/MainNavbar.php");
-            ?>
-
+        <?php
+        require_once("../html/MainNavbar.php");
+    ?>
+            
             <!-- Breadcrumb Area -->
             <div class="breadcrumb-area">
                 <h1>Mnt. Usuarios</h1>
@@ -46,7 +45,7 @@ if (isset($_SESSION["usu_id"])) {
             </div>
 
 
-            <div class="card mb-30">
+                <div class="card mb-30">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h3>Listado de Usuarios</h3>
 
@@ -55,51 +54,49 @@ if (isset($_SESSION["usu_id"])) {
 
 
                 <div class="card-body">
-                    <table id="usuario_data" class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Código</th>
-                                <th>Nombre</th>
-                                <th>Vigencia</th>
-                                <th>F.Inicio</th>
-                                <th>F.Final</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                <table id="usuario_data" class="table display responsive nowrap">
+    <thead>
+        <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Correo Electrónico</th>
+            <th>Estado</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody> 
+    </tbody>
+</table>
 
-                </div>
+            </div>
             </div>
             <!-- End Breadcrumb Area -->
 
             <div class="flex-grow-1"></div>
 
             <?php
-            require_once("../html/MainFooter.php");
-            ?>
-            <?php
+        require_once("../html/MainFooter.php");
+    ?>
+                <?php
 
-            require_once("mntmantenimiento.php")
-            ?>
+require_once("mntmantenimiento.php") 
+?>
 
         </div>
         <!-- End Main Content Wrapper Area -->
         <?php
         require_once("../html/MainJs.php");
-        ?>
-        <script tyoe="text/javascript" src="mntusuario.js"></script>
-
+    ?>
+    <script tyoe="text/javascript" src="mntusuario.js"></script>
+    
     </body>
-
-    </html>
+</html>
 
 <?php
 
-} else {
-    header("location:" . Conectar::ruta() . "../../index.php");
-}
+    }else{
+        header("location:" .Conectar::ruta(). "../../index.php");
+    }
 
 ?>

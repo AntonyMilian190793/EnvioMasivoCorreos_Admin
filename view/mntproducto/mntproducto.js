@@ -105,14 +105,12 @@ function editar(prod_id){
         var datos = JSON.parse(data);
         $('#prod_id').val(datos.prod_id);
         $('#prod_nom').val(datos.prod_nom);
-        $('#prod_oficial').val(datos.prod_oficial);
-        $('#prod_soles').val(datos.prod_soles);
-        $('#prod_usd').val(datos.prod_usd);
-        $('#prod_plazo').val(datos.prod_plazo);
-        $('#fech_inicio').val(datos.fech_inicio);
-        $('#fech_fin').val(datos.fech_fin);
-        $('#prod_monto').val(datos.prod_monto);
-        $('#prod_ie').val(datos.prod_ie);
+        $('#prod_precion').val(datos.prod_precion);
+        $('#prod_preciod').val(datos.prod_preciod);
+        $('#prod_img').val(datos.prod_img);
+        $('#prod_cupon').val(datos.prod_cupon);
+        $('#prod_url').val(datos.prod_url);
+        $('#prod_descrip').val(datos.prod_descrip);
         $('#mntmantenimiento').modal('show');
     });
 }
