@@ -72,7 +72,7 @@
                                     </div>
 
                                     <div class="info text-center">
-                                        <span class="name"><?php echo $_SESSION["usu_nom"] ." ".$_SESSION["usu_apep"] ." ". $_SESSION["usu_apem"] ?></span>
+                                        <span class="name"><?php echo $_SESSION["usu_nom"] ." ".$_SESSION["usu_apep"] ?></span>
                                         <p class="mb-3 email"><?php echo $_SESSION["usu_correo"] ?></p>
                                     </div>
                                 </div>

@@ -53,17 +53,40 @@
 
 
                 <div class="card-body">
-                <table id="producto_data" class="table display responsive nowrap">
+                <table id="producto_data" class="table table-striped">
     <thead>
         <tr>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Desc</th>
-            <th>Cupon</th>
+            <th>Financiador</th>
+            <th>Oficial</th>
+            <th>S/.</th>
+            <th>USD</th>
+            <th style="width: 10%;">Plazo</th>
+            <th style="width: 10%;">Inicio</th>
+            <th style="width: 10%;">Fin</th>
+            <th style="width: 10%;">Monto USD</th>
+            <th>II.EE</th>
+            <th>Estado</th>
             <th></th>
             <th></th>
         </tr>
     </thead>
+    <tfoot>
+        <tr>
+            <th>Total</th>
+            <th></th>
+            <th>S/.</th>
+            <th>USD</th>
+            <th></th>
+            <th></th>
+            <th></th>
+
+
+            <th style="width: 10%;">Monto USD</th>
+
+            <th></th>
+            <th></th>
+        </tr>
+    </tfoot>
     <tbody> 
     </tbody>
 </table>
