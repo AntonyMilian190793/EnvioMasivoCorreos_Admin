@@ -11,12 +11,8 @@
                 <div class="modal-body">
                 <input type="hidden" name="usu_id" id="usu_id">
                 <div class="form-group">
-                    <label>Nombres</label>
+                    <label>Nombres y Apellidos / Empresa</label>
                         <input type="text" id="usu_nom" name="usu_nom" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label>Apellidos</label>
-                        <input type="text" id="usu_apep" name="usu_apep" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label>Correo</label>

@@ -9,9 +9,9 @@ switch($_GET["op"]){
 
     case "guardaryeditar":
         if(empty($_POST["usu_id"])){
-            $usuario->insert_usuario($_POST["usu_nom"], $_POST["usu_apep"], $_POST["usu_apem"], $_POST["usu_correo"]);
+            $usuario->insert_usuario($_POST["usu_nom"], $_POST["usu_correo"]);
         }else{
-            $usuario->update_usuario($_POST["usu_id"],$_POST["usu_nom"], $_POST["usu_apep"], $_POST["usu_apem"], $_POST["usu_correo"]);
+            $usuario->update_usuario($_POST["usu_id"],$_POST["usu_nom"], $_POST["usu_correo"]);
         }
         break;
 
@@ -21,7 +21,6 @@ switch($_GET["op"]){
         foreach($datos as $row){
             $sub_array = array();
             $sub_array[] = $row["usu_nom"];
-            $sub_array[] = $row["usu_apep"] ."  ". $row["usu_apem"] ;
             $sub_array[] = $row["usu_correo"];
                 
             if( $row["est"] == 1){

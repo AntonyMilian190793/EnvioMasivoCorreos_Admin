@@ -105,8 +105,6 @@ function editar(usu_id){
         var datos = JSON.parse(data);
         $('#usu_id').val(datos.usu_id);
         $('#usu_nom').val(datos.usu_nom);
-        $('#usu_apep').val(datos.usu_apep);
-        $('#usu_apem').val(datos.usu_apem);
         $('#usu_correo').val(datos.usu_correo);
         $('#mntmantenimiento').modal('show');
     });

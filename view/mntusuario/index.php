@@ -57,8 +57,7 @@
                 <table id="usuario_data" class="table display responsive nowrap">
     <thead>
         <tr>
-            <th>Nombres</th>
-            <th>Apellidos</th>
+            <th>Nombres y Apellidos / Empresa</th>
             <th>Correo Electrónico</th>
             <th>Estado</th>
             <th></th>
