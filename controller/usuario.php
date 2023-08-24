@@ -18,8 +18,9 @@ switch($_GET["op"]){
     case "listar":
         $datos =$usuario->get_usuario();
         $data = array();
-        foreach($datos as $row){
+        foreach($datos as $key => $row){
             $sub_array = array();
+            $sub_array[] = ($key+1);
             $sub_array[] = $row["usu_nom"];
             $sub_array[] = $row["usu_correo"];
                 

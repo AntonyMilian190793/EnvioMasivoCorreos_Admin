@@ -56,6 +56,7 @@
                 <table id="producto_data" class="table display responsive nowrap">
     <thead>
         <tr>
+            <th>Nro.</th>
             <th>Nombre</th>
             <th>Descripción</th>
             <th></th>

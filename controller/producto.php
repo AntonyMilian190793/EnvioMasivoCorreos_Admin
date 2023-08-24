@@ -18,8 +18,9 @@ switch($_GET["op"]){
     case "listar":
         $datos =$producto->get_producto();
         $data = array();
-        foreach($datos as $row){
+        foreach($datos as $key => $row){
             $sub_array = array();
+            $sub_array[] = ($key+1);
             $sub_array[] = $row["prod_nom"];
             $sub_array[] = $row["prod_descrip"];
             $sub_array[] = '<button type="button" onClick="editar('.$row["prod_id"].')" id="'.$row["prod_id"].'" class="btn btn-outline-success"><i class="bx bx-edit"></i></button></button>';
