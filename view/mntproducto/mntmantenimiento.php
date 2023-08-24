@@ -11,31 +11,19 @@
                 <div class="modal-body">
                 <input type="hidden" name="prod_id" id="prod_id">
                 <div class="form-group">
-                    <label>Nombre de Producto</label>
+                    <label>Nombre de Producto(*)</label>
                         <input type="text" id="prod_nom" name="prod_nom" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label>Precio Normal</label>
-                        <input type="text" id="prod_precion" name="prod_precion" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label>Precio Desc.</label>
-                        <input type="text" id="prod_preciod" name="prod_preciod" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label>Url</label>
+                    <label>URL(*)</label>
                         <input type="text" id="prod_url" name="prod_url" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label>Ruta Imagen</label>
+                    <label>Ruta Imagen(*)</label>
                         <input type="text" id="prod_img" name="prod_img" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label>Cupón</label>
-                        <input type="text" id="prod_cupon" name="prod_cupon" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label>Descripción</label>
+                    <label>Descripción(*)</label>
                         <textarea id="prod_descrip" name="prod_descrip" class="form-control" rows="3" required></textarea>
                 </div>
                 </div>

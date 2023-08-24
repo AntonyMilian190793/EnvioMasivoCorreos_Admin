@@ -57,9 +57,7 @@
     <thead>
         <tr>
             <th>Nombre</th>
-            <th>Precio</th>
-            <th>Desc</th>
-            <th>Cupon</th>
+            <th>Descripción</th>
             <th></th>
             <th></th>
         </tr>

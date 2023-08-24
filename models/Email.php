@@ -71,15 +71,16 @@
             $this->Host = 'smtp.office365.com';
             $this->Port = 587;
             $this -> SMTPAuth = true;
+            $this->SMTPSecure = 'tls';
 
             $this->Username = $this->gCorreo;
             $this->Password = $this->gContrasena;
             $this->From = $this->gCorreo;
             $this->FromName = "Fe y Alegría del Perú";
             $this->CharSet = 'UTF8';
+            
 
             foreach($datos2 as $row2){
-              //$this->addAddress($row2["usu_correo"]);
               $this->addAddress($row2["usu_correo"]);
               $this->WordWrap = 50;
               $this->IsHTML(true);
@@ -89,13 +90,7 @@
               $cuerpo = str_replace('$xemaildesuscribirse', 'http://localhost/EnvioMasivoCorreos_Admin/view/desuscribirse/?email='.$row2["usu_correo"], $cuerpo);
               $this->Body = $cuerpo;
               $this->AltBody = strip_tags("Descuento");
-
-              try{
-                $this->Send();
-                return $row2["usu_correo"];
-              }catch(Exception $e){
-                return $e;
-              }
+              $this->Send();
             }
 
             // $this->addAddress("antonymilian19@outlook.com");

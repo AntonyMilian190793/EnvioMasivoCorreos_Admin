@@ -9,9 +9,9 @@ switch($_GET["op"]){
 
     case "guardaryeditar":
         if(empty($_POST["prod_id"])){
-            $producto->insert_producto($_POST["prod_nom"],$_POST["prod_precion"],$_POST["prod_preciod"],$_POST["prod_url"],$_POST["prod_img"],$_POST["prod_cupon"],$_POST["prod_descrip"]);
+            $producto->insert_producto($_POST["prod_nom"],$_POST["prod_url"],$_POST["prod_img"],$_POST["prod_descrip"]);
         }else{
-            $producto->update_producto($_POST["prod_id"],$_POST["prod_nom"],$_POST["prod_precion"],$_POST["prod_preciod"],$_POST["prod_url"],$_POST["prod_img"],$_POST["prod_cupon"],$_POST["prod_descrip"]);
+            $producto->update_producto($_POST["prod_id"],$_POST["prod_nom"],$_POST["prod_url"],$_POST["prod_img"],$_POST["prod_descrip"]);
         }
         break;
 
@@ -21,9 +21,7 @@ switch($_GET["op"]){
         foreach($datos as $row){
             $sub_array = array();
             $sub_array[] = $row["prod_nom"];
-            $sub_array[] = $row["prod_precion"];
-            $sub_array[] = $row["prod_preciod"];
-            $sub_array[] = $row["prod_cupon"];
+            $sub_array[] = $row["prod_descrip"];
             $sub_array[] = '<button type="button" onClick="editar('.$row["prod_id"].')" id="'.$row["prod_id"].'" class="btn btn-outline-success"><i class="bx bx-edit"></i></button></button>';
             $sub_array[] = '<button type="button" onClick="eliminar('.$row["prod_id"].')" id="'.$row["prod_id"].'" class="btn btn-outline-danger"><i class="bx bx-trash"></i></button></button>';
             $data[] = $sub_array;
