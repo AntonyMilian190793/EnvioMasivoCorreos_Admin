@@ -45,6 +45,23 @@ if (isset($_SESSION["usu_id"])) {
                 <button onclick="nuevo()" class="btn btn-primary btn-md">Nuevo</button>
             </div>
 
+            <div class="breadcrumb-area">
+                <h1>Arch. CSV</h1>
+
+                <ol class="breadcrumb">
+                    <li class="item"><a href="../home/"><i class='bx bx-home-alt'></i></a></li>
+
+                    <li class="item">Subir archivo CSV</li>
+                    <br>
+                </ol>
+                <form action="archivosCVS/recibe_excel_validando.php" method="POST" enctype="multipart/form-data" />
+                <input type="file" name="dataCliente" id="file-input" class="file-input__input" />
+                <label class="file-input__label" for="file-input">
+                    <button class="btn btn-primary btn-md" type="submit" name="subir" class="btn-enviar" value="Subir Excel">Subir CSV</button>
+
+                    </form>
+            </div>
+
 
             <div class="card mb-30">
                 <div class="card-header d-flex justify-content-between align-items-center">
