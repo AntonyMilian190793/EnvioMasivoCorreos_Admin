@@ -81,6 +81,7 @@
             
 
             foreach($datos2 as $row2){
+              $this->ClearAllRecipients();
               $this->addAddress($row2["usu_correo"]);
               $this->WordWrap = 50;
               $this->IsHTML(true);
