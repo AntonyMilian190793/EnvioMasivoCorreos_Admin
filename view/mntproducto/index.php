@@ -54,14 +54,14 @@ if (isset($_SESSION["usu_id"])) {
 
 
                 <div class="card-body">
-                    <table id="producto_data" class="table display responsive nowrap">
+                    <table id="producto_data" class="table">
                         <thead>
                             <tr>
-                                <th style="width: 8%;">Nro.</th>
-                                <th>Nombre</th>
-                                <th>Descripción</th>
-                                <th></th>
-                                <th></th>
+                                <th class="d-none d-sm-table-cell" style="width: 8%;">Nro.</th>
+                                <th class="d-none d-sm-table-cell" style="width: 8%;">Nombre</th>
+                                <th class="d-none d-sm-table-cell" style="width: 60%;">Descripción</th>
+                                <th class="d-none d-sm-table-cell" style="width: 8%;">Editar</th>
+                                <th class="d-none d-sm-table-cell" style="width: 8%;">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>

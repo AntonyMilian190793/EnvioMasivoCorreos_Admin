@@ -50,9 +50,6 @@ switch($_GET["op"]){
             foreach($datos as $row){
                 $output["prod_id"] = $row["prod_id"];
                 $output["prod_nom"] = $row["prod_nom"];
-                $output["prod_precion"] = $row["prod_precion"];
-                $output["prod_preciod"] = $row["prod_preciod"];
-                $output["prod_cupon"] = $row["prod_cupon"];
                 $output["prod_url"] = $row["prod_url"];
                 $output["prod_img"] = $row["prod_img"];
                 $output["prod_descrip"] = $row["prod_descrip"];
