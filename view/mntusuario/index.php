@@ -54,12 +54,12 @@ if (isset($_SESSION["usu_id"])) {
                     <li class="item">Subir archivo CSV</li>
                     <br>
                 </ol>
-                <form action="archivosCVS/recibe_excel_validando.php" method="POST" enctype="multipart/form-data" />
-                <input type="file" name="dataCliente" id="file-input" class="file-input__input" />
-                <label class="file-input__label" for="file-input">
+                <form action="archivosCVS/recibe_excel_validando.php" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="dataCliente" id="file-input" class="file-input__input" />
+                    <label class="file-input__label" for="file-input"></label>
                     <button class="btn btn-primary btn-md" type="submit" name="subir" class="btn-enviar" value="Subir Excel">Subir CSV</button>
+                </form>
 
-                    </form>
             </div>
 
 

@@ -45,7 +45,7 @@ $(document).ready(function(){
         "responsive": true,
         "bInfo":true,
         "iDisplayLength": 30,
-        "order": [[ 0, "desc" ]],
+        "order": [[ 0, "asc" ]],
         "language": {
             "sProcessing":     "Procesando...",
             "sLengthMenu":     "Mostrar _MENU_ registros",
@@ -65,10 +65,6 @@ $(document).ready(function(){
                 "sNext":     "Siguiente",
                 "sPrevious": "Anterior"
             },
-            "oAria": {
-                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
-                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-            }
         }
     });
 
