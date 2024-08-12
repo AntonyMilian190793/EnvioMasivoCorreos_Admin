@@ -69,8 +69,8 @@ $(document).ready(function() {
 function eliminar(usu_id){
 
     Swal.fire({
-        title: 'Eliminar?',
-        text: "Está seguro de eliminar el registro",
+        title: 'Desactivar?',
+        text: "Está seguro de desactivar el registro",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -90,6 +90,54 @@ function eliminar(usu_id){
           )
         }
       })
+}
+
+function activar(usu_id) {
+    Swal.fire({
+        title: '¿Está seguro de activar este Usuario?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No',
+        confirmButtonText: 'Sí, activar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.post("../../controller/usuario.php?op=activar", { usu_id: usu_id })
+            .done(function(response) {
+                try {
+                    const data = JSON.parse(response);
+                    if (data.success) {
+                        Swal.fire(
+                            'Activado!',
+                            'El Usuario ha sido activado correctamente.',
+                            'success'
+                        );
+                    } else {
+                        Swal.fire(
+                            'Activado!',
+                            'No se pudo activar el usuario.',
+                            'error'
+                        );
+                    }
+                } catch (e) {
+                    Swal.fire(
+                        'Activado!',
+                        'El Usuario ha sido activado correctamente.',
+                        'success'
+                    );
+                }
+                $('#usuario_data').DataTable().ajax.reload();
+            })
+            .fail(function() {
+                Swal.fire(
+                    'Error!',
+                    'Hubo un problema con la solicitud.',
+                    'error'
+                );
+            });
+        }
+    });
 }
 
 function editar(usu_id){

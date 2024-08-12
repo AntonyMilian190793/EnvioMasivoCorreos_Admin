@@ -34,10 +34,10 @@ switch($_GET["op"]){
                 $sub_array[] = '<button type="button" onClick="editar('.$row["usu_id"].')" id="'.$row["usu_id"].'" class="btn btn-outline-success"><i class="bx bx-edit"></i></button></button>';
                 $sub_array[] = '<button type="button" onClick="eliminar('.$row["usu_id"].')" id="'.$row["usu_id"].'" class="btn btn-outline-danger"><i class="bx bx-trash"></i></button></button>';
             }else{
-                $sub_array[] = '<button type="button" disabled class="btn btn-outline-success"><i class="bx bx-edit"></i></button></button>';
-                $sub_array[] = '<button type="button" disabled class="btn btn-outline-danger"><i class="bx bx-trash"></i></button></button>';
+                $sub_array[] = '<button type="button" onClick="activar(' . $row["usu_id"] . ');" id="' . $row["usu_id"] . '" class="btn btn-outline-primary"><i class="bx bx-check"></i></button>';
+                $sub_array[] = '<button type="button" disabled class="btn btn-outline-danger"><i class="bx bx-trash"></i></button>';
             }
-           
+            
             $data[] = $sub_array;
         }
 
@@ -53,6 +53,11 @@ switch($_GET["op"]){
     case "eliminar" :
 
         $usuario->delete_usuario($_POST["usu_id"]);
+        break;
+
+    case "activar":
+
+        $usuario->activar_usuario($_POST["usu_id"]);
         break;
 
         case "mostrar" :

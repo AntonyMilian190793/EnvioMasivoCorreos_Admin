@@ -55,6 +55,16 @@ class Usuario extends Conectar {
         $sql->execute();
     }
 
+    public function activar_usuario($usu_id)
+    {
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql = "UPDATE tm_usuario SET est=1 WHERE usu_id=?";
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $usu_id);
+        $sql->execute();
+    }
+
     public function get_usuario_x_id($usu_id){
         $conectar = parent::conexion();
         parent::set_names();
