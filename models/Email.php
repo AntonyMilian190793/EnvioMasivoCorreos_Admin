@@ -12,8 +12,8 @@ require_once("../models/Usuario.php");
 class Email extends PHPMailer
 {
 
-  protected $gCorreo = 'feyalegriaperu2@outlook.com'; //variable que contiene el correo destinatario antonymilian19@outlook.com
-  protected $gContrasena = '@nton&mil&an19071993&*'; //varibale que tiene la contraseña distanatario jorgemilian190793
+  protected $gCorreo = 'xxjammxx19@gmail.com'; //variable que contiene el correo destinatario antonymilian19@outlook.com
+  protected $gContrasena = 'aqgf iwjt arth pzpv'; //varibale que tiene la contraseña distanatario jorgemilian190793
 
   public function enviar_correo()
   {
@@ -69,7 +69,7 @@ class Email extends PHPMailer
     $datos2 = $usuario->get_usuario();
 
     $this->isSMTP();
-    $this->Host = 'smtp.office365.com';
+    $this->Host = 'smtp.gmail.com';
     $this->Port = 587;
     $this->SMTPAuth = true;
     $this->SMTPSecure = 'tls';
